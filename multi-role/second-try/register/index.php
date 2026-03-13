@@ -1,22 +1,3 @@
-<?php
-session_start();
-
-// Jika sudah register dan role valid, redirect ke dashboard sesuai role
-if (isset($_SESSION['user_id']) && isset($_SESSION['role']) && in_array($_SESSION['role'], ['admin', 'petugas', 'peminjam'])) {
-    if ($_SESSION['role'] === 'admin') {
-        header('Location: ../admin/dashboard.php');
-        exit();
-    } else if ($_SESSION['role'] === 'petugas') {
-        header('Location: ../petugas/dashboard.php');
-        exit();
-    } else if ($_SESSION['role'] === 'peminjam') {
-        header('Location: ../peminjam/dashboard.php');
-        exit();
-    }   
-}
-
-?>
-
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -48,8 +29,8 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['role']) && in_array($_SESSIO
             <?php endif; ?>
 
             <div class="auth-links">
-                <a href="../login/index.php">Login</a>
-                <a href="../index.php">Home</a>
+                <a href="/login">Login</a>
+                <a href="/index.php">Home</a>
             </div>
         </section>
     </main>

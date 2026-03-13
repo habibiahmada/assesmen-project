@@ -1,29 +1,10 @@
-<?php
-session_start();
-
-// Jika sudah login dan role valid, redirect ke dashboard sesuai role
-if (isset($_SESSION['user_id']) && isset($_SESSION['role']) && in_array($_SESSION['role'], ['admin', 'petugas', 'peminjam'])) {
-    if ($_SESSION['role'] === 'admin') {
-        header('Location: ../admin/dashboard.php');
-        exit();
-    } else if ($_SESSION['role'] === 'petugas') {
-        header('Location: ../petugas/dashboard.php');
-        exit();
-    } else if ($_SESSION['role'] === 'peminjam') {
-        header('Location: ../peminjam/dashboard.php');
-        exit();
-    }   
-}
-
-?>
-
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Page</title>
-    <link rel="stylesheet" href="../style.css">
+    <title>Halaman Login</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <main class="auth-page">
